@@ -1,14 +1,16 @@
 export const initialState = {
   basket: [],
+  user: null,
 };
 
 //Selector
 export const getBasketTotal = (basket) =>
   basket?.reduce((amount, item) => item.price + amount, 0);
 // console.log("the total is ", amount);
+
 const reducer = (state, action) => {
-    console.log(action);
-    switch (action.type) {
+  console.log(action);
+  switch (action.type) {
     case "ADD_TO_BASKET":
       return {
         ...state,
@@ -31,10 +33,12 @@ const reducer = (state, action) => {
         ...state,
         basket: newBasket,
       };
-    //   return {
-    //     ...state,
-    //     basket: state.basket.filter((item) => item.id !== action.id),
-    //   };
+
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
+      };
 
     default:
       return state;
