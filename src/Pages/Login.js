@@ -1,19 +1,47 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
+
 export default function Login() {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const signIn = (e) => {
+  const signIn = async (e) => {
     e.preventDefault();
+    try {
+      const user = await signInWithEmailAndPassword(auth, email, password);
+      console.log(user);
+      if (user) {
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error.message);
+      alert(error.message);
+    }
     // some fancy firebase login stuff here
   };
 
-  const register = (e) => {
+  const register = async (e) => {
     e.preventDefault();
-    // do some firebase register stuff here
-  }
+    try {
+      const user = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(user);
+      if (user) {
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error.message);
+      alert(error.message);
+    }
+  };
   return (
     <div className="login">
       <Link to="/">
@@ -61,6 +89,7 @@ export default function Login() {
         >
           Create your Amazon Account
         </button>
+        {/* <h1>Hello {user?.email}</h1> */}
       </div>
     </div>
   );
