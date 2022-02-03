@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { onAuthStateChanged } from "firebase/auth";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -7,6 +7,7 @@ import Layout from "./Pages/Layout";
 import Checkout_Layout from "./Pages/Checkout_Layout";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
+import Payment_Layout from "./Pages/Payment_Layout";
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -17,15 +18,15 @@ function App() {
       if (user) {
         //the user just logged in / the user was logged in
         dispatch({
-          type: 'SET_USER',
-          user: user
-        })
+          type: "SET_USER",
+          user: user,
+        });
       } else {
         // the user is logged out
         dispatch({
-          type: 'SET_USER',
-          user: null
-        })
+          type: "SET_USER",
+          user: null,
+        });
       }
     });
   }, []);
@@ -37,6 +38,7 @@ function App() {
           <Route path="/" element={<Layout />} />
           <Route path="login" element={<Login />} />
           <Route path="checkout" element={<Checkout_Layout />} />
+          <Route path="payment" element={<Payment_Layout />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -32,11 +32,12 @@
 }
 
 .product > button {
-    border: 2px solid lightslategray;
+    border: 1px solid lightslategray;
     padding: 5px;
     font-size: 15px;
     border-radius: 2px;
-    background-color: grey;
+    background-color:darkorange;
     font-weight:bold ;
+    
 
 }
