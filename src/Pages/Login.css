@@ -1,34 +1,25 @@
 .login {
-  background-color: black;
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  /* justify-content: center; */
+  max-width: 2000px;
+  margin: 10px;
 }
 
 .login__logo {
-  /* width: 10%; */
   width: 200px;
-  /* border: 1px solid lightgrey; */
-  /* background: rgba(255, 255, 255, 0.5); */
-  margin-top:10px;
+  margin-top: 5px;
 }
 
 .login__container {
-  /* border: 1px solid lightgrey; */
+  border: 1px solid lightgrey;
   border-radius: 5px;
-  width: 500px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   padding: 20px;
   background: rgba(255, 255, 255, 0.5);
-  /* margin-bottom: 1000px; */
-  /* justify-content: space-evenly; */
-  /* margin-top: 5px; */
-  /* align-items: center; */
-  /* justify-content:space-evenly; */
 }
 
 .login__container > form {
@@ -51,25 +42,24 @@
 }
 
 .login__signInButton {
-    font-size: 20px;
-    padding: 5px;
-    border: 1px solid lightgrey;
-    border-radius: 2px;
-    font-weight: bold;
-    background-color:darkorange;
+  font-size: 20px;
+  padding: 5px;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  font-weight: bold;
+  background-color: darkorange;
 }
 
 .login__registerButton {
-    font-size: 20px;
-    padding: 5px;
-    border: 1px solid lightgrey;
-    border-radius: 2px;
-    font-weight: bold;
-    margin-top: 5px;
-    background-color: darkorange;   
+  font-size: 20px;
+  padding: 5px;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  font-weight: bold;
+  margin-top: 5px;
+  background-color: darkorange;
 }
 
 .login__container > h1 {
-    margin-bottom: 5px;
-
+  margin-bottom: 5px;
 }

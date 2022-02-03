@@ -2,7 +2,7 @@
     /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 200px;
     /* height: 25%; */
     margin: 20px;
     padding: 10px;
@@ -28,6 +28,9 @@
     font-size: 15px;
     border-radius: 2px;
     cursor: pointer;
+    background-color: darkorange;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
 }
 
 .checkoutProduct__image{
